@@ -10,6 +10,10 @@ import Home from './components/Home/Home';
 import Ecertificate from './components/Ecertificate/Ecertificate';
 import Admin from './components/Admin/Admin';
 import SingleCertificate from './components/SingleCertificate/SingleCertificate';
+import AuthProvider from './components/AuthProvider/AuthProvider';
+import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Register from './components/Register/Register'
 
 const router = createBrowserRouter([
   {
@@ -26,20 +30,25 @@ const router = createBrowserRouter([
       },
       {
         path:'admin',
-        element:<Admin></Admin>
+        element:<PrivateRoute><Admin></Admin></PrivateRoute>
       },
       {
         path: 'singleCertificate/:nameText',
         element: <SingleCertificate></SingleCertificate>,
         loader: ({params})=>fetch(`http://localhost:5000/singleCertificate/${params.nameText}`)
       },
-
+      {
+        path: 'login',
+        element: <Login></Login>
+      }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

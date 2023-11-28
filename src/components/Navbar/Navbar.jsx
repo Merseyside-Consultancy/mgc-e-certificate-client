@@ -1,18 +1,41 @@
 import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+
+  const {user,logOut} = useContext(AuthContext)
+  
+  const handleLogOut =()=>{
+    logOut()
+    .then()
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
     const navOptions = (
         <>
           <li>
             <NavLink className={({isActive})=>isActive?"me-6 text-blue-400 text-sm bg-transparent":"me-6 hover:text-blue-400 text-black hover:text-sm hover:bg-transparent"} to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive?"me-6 text-blue-400 text-sm bg-transparent":"me-6 hover:text-blue-400 text-black hover:text-sm hover:bg-transparent"} to="/e-certificate">E-Certificate</NavLink>
+            <NavLink className={({isActive})=>isActive?"me-6 text-blue-400 text-sm bg-transparent":"me-6 hover:text-blue-400 text-black hover:text-sm hover:bg-transparent"} to="/e-certificate">
+              E-Certificate</NavLink>
           </li>
+          {user? (<div className="flex items-center">
           <li>
             <NavLink className={({isActive})=>isActive?"me-6 text-blue-400 text-sm bg-transparent":"me-6 hover:text-blue-400 text-black hover:text-sm hover:bg-transparent"} to="/admin">Admin</NavLink>
           </li>
+              <button onClick={handleLogOut} className="px-5 py-1 font-semibold bg-sky-500 text-white rounded ms-2">Logout</button>
+            </div>
+            
+            ) : (
+              <NavLink className={({isActive})=> isActive ? "px-6 py-2 scale-110 font-semibold bg-sky-500 text-white rounded w-36" : "px-6 py-2 w-36 font-semibold bg-sky-500 text-white rounded " } to="/login">
+                <button >Admin Login</button></NavLink>
+            )
+          }
         </>
       );
       return (
@@ -47,7 +70,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="navbar-center hidden md:flex ms-96">
-              <ul className="flex px-1 md:mt-7">{navOptions}</ul>
+              <ul className="flex items-center px-1 md:mt-7">{navOptions}</ul>
             </div>
           </div>
         </>

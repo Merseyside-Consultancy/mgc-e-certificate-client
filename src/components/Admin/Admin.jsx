@@ -242,11 +242,10 @@ const handleUpload = async () => {
 };
 
 
-
   return (
     <div className="Admin">
       <div className="Meta">
-        <h1 className="text-3xl font-bold text-center">Merseyside Global College</h1>
+        <h1 className="text-3xl font-bold text-center">Upload Certificates</h1>
         <p className="text-xl font-bold mt-10 ms-96">Drag your file or choose your file</p>
         <input type="file" accept=".xlsx, .xls" onChange={handleExcelChange} />
       <button className="btn btn-info " onClick={handleUpload}>

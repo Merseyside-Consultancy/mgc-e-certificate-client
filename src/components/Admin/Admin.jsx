@@ -187,7 +187,7 @@ const handleUpload = async () => {
     }
   }
 
-  fetch('http://localhost:5000/certificates', {
+  fetch('https://mgc-e-certificate-server.vercel.app/certificates', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

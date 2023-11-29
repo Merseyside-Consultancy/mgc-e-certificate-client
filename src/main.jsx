@@ -13,7 +13,6 @@ import SingleCertificate from './components/SingleCertificate/SingleCertificate'
 import AuthProvider from './components/AuthProvider/AuthProvider';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Register from './components/Register/Register'
 
 const router = createBrowserRouter([
   {
@@ -35,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: 'singleCertificate/:nameText',
         element: <SingleCertificate></SingleCertificate>,
-        loader: ({params})=>fetch(`http://localhost:5000/singleCertificate/${params.nameText}`)
+        loader: ({params})=>fetch(`https://mgc-e-certificate-server.vercel.app/singleCertificate/${params.nameText}`)
       },
       {
         path: 'login',

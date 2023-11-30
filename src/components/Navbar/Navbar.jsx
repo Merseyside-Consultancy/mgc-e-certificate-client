@@ -64,7 +64,7 @@ const Navbar = () => {
               <div className="flex items-center justify-end mt-2 md:-ps-4 ms-5">
                 <img
                   className="md:w-32 w-28 md:ms-40 mt-5 ms-20"
-                  src="/image/logo.png"
+                  src="https://i.ibb.co/Xjm36nt/Final-MGC.png"
                   alt=""
                 />
               </div>

@@ -167,7 +167,7 @@ const Admin = () => {
   };
 
   img.onload = processImage;
-  img.src = "https://i.ibb.co/Q6FwWZc/e-certificate-5.jpg";
+  img.src = "https://i.ibb.co/jb1RC52/e-certificate-5.jpg";
 });
 };
 
@@ -260,7 +260,7 @@ const handleUpload = async () => {
           <p className="date">{dateValue}</p>
           <p className="detail w-96">has successfully completed {detailValue} <span className="font-bold">at Merseyside Consultancy</span></p>
           <canvas ref={canvasRef} style={{ display: 'none' }} />
-          <img id="c-img" src="https://i.ibb.co/Q6FwWZc/e-certificate-5.jpg" alt="Certificate" />
+          <img id="c-img" src="https://i.ibb.co/jb1RC52/e-certificate-5.jpg" alt="Certificate" />
         </div>
       </div>
     </div>

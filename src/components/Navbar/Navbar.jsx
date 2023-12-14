@@ -62,11 +62,11 @@ const Navbar = () => {
                 </ul>
               </div>
               <div className="flex items-center justify-end mt-2 md:-ps-4 ms-5">
-                <img
+                <a href="https://mgccollege.com/"><img
                   className="md:w-32 w-28 md:ms-40 mt-5 ms-20"
                   src="https://i.ibb.co/Xjm36nt/Final-MGC.png"
                   alt=""
-                />
+                /></a>
               </div>
             </div>
             <div className="navbar-center hidden md:flex ms-96">
